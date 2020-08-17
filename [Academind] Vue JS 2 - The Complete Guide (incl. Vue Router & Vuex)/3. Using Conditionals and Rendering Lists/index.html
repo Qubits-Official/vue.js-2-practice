@@ -21,28 +21,44 @@
 
     <body>
         <div id="app">
+            <!--
             <p v-if="show">You can see me! <span>Hello!</span></p>
             <p v-else>Now you see me!</p>
             <template v-if="show">
                 <h1>Heading</h1>
                 <p>Inside a template</p>
             </template>
-            <p v-if="show1">(other) You can see me! <span>Hello!</span></p>
-            <p v-else>(other) Now you see me!</p>
-            <p>Do you also see me?</p>
+            <p v-show="show">Do you also see me?</p>
             <button @click="show = !show">Switch</button>
-            <button @click="show1 = !show1">Switch other</button>
-            <hr>
+            -->
 
-            <p v-if="type === 'A'" @click="type = 'B'">This is type A1</p>
-            <p v-else-if="type === 'B'">This is type B1</p>
-            <p v-else-if="type === 'C'">This is type C1</p>
-            <p v-else>This is type D1</p>
-            <p v-if="type === 'A'">This is type A2</p>
-            <p v-else-if="type === 'B'">This is type B2</p>
-            <p v-else-if="type === 'C'">This is type C2</p>
-            <p v-else>This is type D2</p>
-            <input type="text" v-model="type">
+            <ul>
+                <li v-for="(ingredient, index) in ingredients" :key="index">
+                    {{ (index + 1) + ". " + ingredient }}
+                </li>
+            </ul>
+            <button @click="ingredients.push('spices')">Add New</button>
+            <hr>
+            <ul>
+                <li v-for="(person, index) in persons" :key="index">
+                    {{ person.name }}
+                </li>
+            </ul>
+            <hr>
+            <hr>
+            <ul>
+                <li v-for="(person, index) in persons" :key="index">
+                    <div v-for="(value, key, index) in person" :key="index">{{ key }}: {{ value }}</div>
+                </li>
+            </ul>
+            <hr>
+            <hr>
+            <p v-for="(n, index) in 10" :key="index">No. {{ n }}</p>
+            <hr>
+            <template v-for="(ingredient, index) in ingredients">
+                <h1>{{ ingredient }}</h1>
+                <p>{{ index }}</p>
+            </template>
         </div>
 
         <!-- Custom script -->
