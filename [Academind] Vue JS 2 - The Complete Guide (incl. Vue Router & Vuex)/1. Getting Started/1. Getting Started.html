@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Vue devtool -->
+        <script src="http://localhost:8098"></script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>1. Getting Started</title>
+
+        <style rel="stylesheet"></style>
+
+        <!-- Vue.js 2 cdn
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        -->
+
+        <!-- Vue.js 2 development version -->
+        <script src="scripts/vue.js"></script>        
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="text" v-on:input="changeTitle">
+            <p>{{ title }}</p>
+        </div>
+        
+        <script src="scripts/example-1.js"></script>
+    </body>
+</html>
