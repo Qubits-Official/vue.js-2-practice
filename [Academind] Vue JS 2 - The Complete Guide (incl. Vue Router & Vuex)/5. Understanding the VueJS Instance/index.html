@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Vue devtool -->
+        <script src="http://localhost:8098"></script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>5. Understanding the VueJS Instance</title>
+
+        <link rel="stylesheet" type="text/css" href=""></link>
+
+        <!-- Vue.js 2 cdn (latest version)
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        -->
+
+        <!-- Vue.js v2.6.11 development version -->
+        <script src="scripts/vue.js"></script>   
+    </head>
+
+    <body>
+        <div id="app-1">
+           <h1 ref="heading">{{ title }}</h1>
+           <button @click="show" ref="myButton">Show Paragraph</button>
+           <p v-if="showParagraph">This is not always visible</p>
+        </div>
+
+        <div id="app-2">
+            <h1>{{ title }}</h1>
+            <button @click=onChange>Change something in Vue 1</button>
+            <hello></hello>
+            <hello></hello>
+         </div>
+
+         <div id="app-3">
+             
+         </div>
+
+         <div id="app-4">
+             <h1>{{ title }}</h1>
+             <button @click="title = 'Changed'">Update Title</button>
+             <button @click="destroy">Destroy</button>
+
+         </div>
+
+        <!-- Custom script -->
+        <script src="scripts/app.js"></script>
+    </body>
+</html>
